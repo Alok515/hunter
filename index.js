@@ -4,14 +4,17 @@ const fevList = [];
 const box = document.getElementById('main');
 const fevButton = document.getElementById('fevButton');
 
+//api url
 function urlVal (val ) {
     return `https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=${val}&ts=alokks&apikey=2117c7e5aeab2ce9376a8ef37e7cf99b&hash=bd5cf177b51fd33b08ead5209bdaea06`;
 }
 
+//fetching the url with fetch 
 async function logData(val) {
     const res = await fetch(urlVal(val));
     const data = await res.json();
     if(data.code === 200 ) {
+        //only storing the usefull data
         const newData = data.data?.results.map(da => (
             {
                 name:da.name,
@@ -26,12 +29,14 @@ async function logData(val) {
     }
 }
 
+//removes the nodes from parent nodes
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
 
+//handles the promise of fetch
 function handleFetch (val) {
     logData(val)
         .then((data) => {
@@ -45,7 +50,7 @@ function handleFetch (val) {
 }
 
 handleFetch('cap');
-
+//handling the search
 function handleSearch() {
     const input = document.getElementById('search');
     let val = input.value;
@@ -56,6 +61,7 @@ function handleSearch() {
     handleFetch(val);
 }
 
+//displaying the data 
 function displayData ( newData ) {
     newData.map(data => {
         const figure = document.createElement('figure');
