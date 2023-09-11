@@ -74,7 +74,7 @@ function displayData ( newData ) {
         fevButton.addEventListener("click", function handleFevButton ( ) {
             fevList.push(data);
             localStorage.setItem("fevList", JSON.stringify(fevList));
-            console.log(fevList);
+            alert("Added to Fevorate list");
         });
         detialButton.textContent = "Details";
         detialButton.id = 'detailButton';

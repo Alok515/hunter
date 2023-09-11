@@ -49,6 +49,9 @@ The Marvel Hunter web app includes the following features:
 
 3. **Favorites Page:** Users can mark their favorite heroes from the hero detail page. The favorites page shows a list of the user's favorite heroes.
 
+## ACTIVE LINK
+[Hunt The Hero](https://hunter-chi.vercel.app/)
+
 ## Acknowledgments
 
 - Marvel API: This project uses the [Marvel API](https://developer.marvel.com/).
